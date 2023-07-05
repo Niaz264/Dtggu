@@ -1,4 +1,9 @@
 FROM sitomao/brownsg:latest
 
-# Expose port 80 for web traffic
-EXPOSE 80/tcp
+# Expose port 80 for web trafficSE
+WORKDIR /usr/src/app
+RUN chmod 777 /usr/src/app
+
+COPY . .
+EXPOSE 80
+CMD ["bash", "start.sh"]
